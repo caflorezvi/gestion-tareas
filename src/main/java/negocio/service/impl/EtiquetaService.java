@@ -1,8 +1,9 @@
-package service.impl;
+package negocio.service.impl;
 
-import dao.EtiquetaDAO;
-import model.Etiqueta;
-import service.interfaces.IEtiquetaService;
+import negocio.dao.EtiquetaDAO;
+import negocio.model.Etiqueta;
+import negocio.service.interfaces.IEtiquetaService;
+
 import java.util.List;
 import java.util.Optional;
 

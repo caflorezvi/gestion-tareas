@@ -1,6 +1,7 @@
-package dao;
+package negocio.dao;
 
-import model.Etiqueta;
+import negocio.model.Etiqueta;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

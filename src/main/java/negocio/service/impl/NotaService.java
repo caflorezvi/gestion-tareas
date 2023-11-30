@@ -1,14 +1,19 @@
-package service.impl;
+package negocio.service.impl;
 
-import dao.NotaDAO;
-import model.*;
-import service.interfaces.INotaService;
+import negocio.dao.NotaDAO;
+import negocio.factory.INotaFactory;
+import negocio.factory.NotaBasicaFactory;
+import negocio.factory.NotaListaTareasFactory;
+import negocio.factory.NotaRecordatorioFactory;
+import negocio.model.Etiqueta;
+import negocio.model.notas.Nota;
+import negocio.model.notas.NotaListaTareas;
+import negocio.model.Tarea;
+import negocio.service.interfaces.INotaService;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public class NotaService implements INotaService {
 
@@ -20,8 +25,8 @@ public class NotaService implements INotaService {
 
     @Override
     public String crearNotaBasica(String titulo, String contenido, List<Etiqueta> etiquetas) {
-        String codigo = UUID.randomUUID().toString();
-        return this.notaDAO.crear( new NotaBasica(codigo, titulo, LocalDateTime.now(), contenido, etiquetas) );
+        NotaBasicaFactory notaBasicaFactory = new NotaBasicaFactory(titulo, contenido, etiquetas);
+        return crearNota(notaBasicaFactory);
     }
 
     @Override
@@ -29,14 +34,20 @@ public class NotaService implements INotaService {
         if(recordatorio.isBefore(LocalDateTime.now()))
             throw new RuntimeException("La fecha de recordatorio no puede ser anterior a la fecha actual");
 
-        String codigo = UUID.randomUUID().toString();
-        return this.notaDAO.crear( new NotaRecordatorio(codigo, titulo, contenido, LocalDateTime.now(), recordatorio, etiquetas) );
+        NotaRecordatorioFactory notaRecordatorioFactory = new NotaRecordatorioFactory(titulo, contenido, recordatorio, etiquetas);
+        return crearNota(notaRecordatorioFactory);
     }
 
     @Override
     public String crearNotaListaTareas(String titulo, List<Tarea> tareas, List<Etiqueta> etiquetas) {
-        String codigo = UUID.randomUUID().toString();
-        return this.notaDAO.crear( new NotaListaTareas(codigo, titulo, LocalDateTime.now(), tareas, etiquetas) );
+        NotaListaTareasFactory notaListaTareasFactory = new NotaListaTareasFactory(titulo, tareas, etiquetas);
+        return crearNota(notaListaTareasFactory);
+    }
+
+    private String crearNota(INotaFactory notaFactory) {
+        Nota notaNueva = notaFactory.crear();
+        this.notaDAO.crear(notaNueva);
+        return notaNueva.getCodigo();
     }
 
     @Override

@@ -1,9 +1,9 @@
-package service.interfaces;
+package negocio.service.interfaces;
 
-import dao.ICRUD;
-import model.Etiqueta;
-import model.Nota;
-import model.Tarea;
+import negocio.model.Etiqueta;
+import negocio.model.notas.Nota;
+import negocio.model.Tarea;
+
 import java.time.LocalDateTime;
 import java.util.List;
 

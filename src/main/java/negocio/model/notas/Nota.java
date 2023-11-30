@@ -1,4 +1,6 @@
-package model;
+package negocio.model.notas;
+
+import negocio.model.Etiqueta;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,28 +30,28 @@ public class Nota {
         return codigo;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public List<Etiqueta> getEtiquetas() {
-        return etiquetas;
-    }
-
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getTitulo() {
+        return titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
     public void setFechaCreacion(LocalDateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public List<Etiqueta> getEtiquetas() {
+        return etiquetas;
     }
 
     public void setEtiquetas(List<Etiqueta> etiquetas) {

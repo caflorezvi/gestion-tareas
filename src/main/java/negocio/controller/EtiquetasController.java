@@ -1,8 +1,9 @@
-package controller;
+package negocio.controller;
 
-import model.Etiqueta;
-import service.interfaces.IEtiquetaService;
-import service.impl.EtiquetaService;
+import negocio.model.Etiqueta;
+import negocio.service.impl.EtiquetaService;
+import negocio.service.interfaces.IEtiquetaService;
+
 import java.util.List;
 
 public class EtiquetasController {

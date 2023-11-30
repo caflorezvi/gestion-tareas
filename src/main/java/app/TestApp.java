@@ -1,10 +1,10 @@
 package app;
 
-import controller.EtiquetasController;
-import controller.NotasController;
-import model.Etiqueta;
-import model.Nota;
-import model.Tarea;
+import negocio.controller.EtiquetasController;
+import negocio.controller.NotasController;
+import negocio.model.Etiqueta;
+import negocio.model.notas.Nota;
+import negocio.model.Tarea;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class TestApp {
 
     public static void main(String[] args) throws Exception {
 
-        NotasController notasController = new NotasController();
+        NotasController notasController = NotasController.getInstancia();
         EtiquetasController etiquetasController = new EtiquetasController();
 
         etiquetasController.crearEtiqueta( new Etiqueta("Trabajo", "Azul"));

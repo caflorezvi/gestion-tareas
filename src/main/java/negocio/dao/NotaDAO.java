@@ -1,6 +1,6 @@
-package dao;
+package negocio.dao;
 
-import model.Nota;
+import negocio.model.notas.Nota;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

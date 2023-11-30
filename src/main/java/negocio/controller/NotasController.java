@@ -1,20 +1,27 @@
-package controller;
+package negocio.controller;
 
-import model.Etiqueta;
-import model.Nota;
-import model.Tarea;
-import service.interfaces.INotaService;
-import service.impl.NotaService;
+import negocio.model.Etiqueta;
+import negocio.model.notas.Nota;
+import negocio.model.Tarea;
+import negocio.service.impl.NotaService;
+import negocio.service.interfaces.INotaService;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class NotasController implements INotaService {
 
+    private static NotasController instancia;
     private final INotaService notaService;
 
-    public NotasController() {
+    private NotasController() {
         this.notaService = new NotaService();
+    }
+
+    public static NotasController getInstancia() {
+        if (instancia == null)
+            instancia = new NotasController();
+        return instancia;
     }
 
     @Override

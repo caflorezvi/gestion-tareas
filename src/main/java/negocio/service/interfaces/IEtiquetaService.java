@@ -1,7 +1,7 @@
-package service.interfaces;
+package negocio.service.interfaces;
 
-import dao.ICRUD;
-import model.Etiqueta;
+import negocio.model.Etiqueta;
+
 import java.util.List;
 
 public interface IEtiquetaService {

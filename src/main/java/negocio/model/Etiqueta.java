@@ -1,4 +1,4 @@
-package model;
+package negocio.model;
 
 import java.util.Objects;
 
