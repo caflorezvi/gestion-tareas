@@ -12,26 +12,6 @@ public class NotaBasicaBuilder {
     private LocalDateTime fechaCreacion;
     private List<Etiqueta> etiquetas;
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getContenido() {
-        return contenido;
-    }
-
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public List<Etiqueta> getEtiquetas() {
-        return etiquetas;
-    }
-
     public NotaBasicaBuilder codigo(String codigo) {
         this.codigo = codigo;
         return this;

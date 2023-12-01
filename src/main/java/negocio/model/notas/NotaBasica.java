@@ -9,11 +9,6 @@ public class NotaBasica extends Nota{
 
     private String contenido;
 
-    public NotaBasica(String codigo, String titulo, LocalDateTime fechaCreacion, String contenido) {
-        super(codigo, titulo, fechaCreacion);
-        this.contenido = contenido;
-    }
-
     public NotaBasica(String codigo, String titulo, LocalDateTime fechaCreacion, String contenido, List<Etiqueta> etiquetas) {
         super(codigo, titulo, fechaCreacion, etiquetas);
         this.contenido = contenido;
