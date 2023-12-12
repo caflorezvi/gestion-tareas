@@ -9,12 +9,6 @@ public class NotaRecordatorio extends Nota {
     private String contenido;
     private LocalDateTime fechaRecordatorio;
 
-    public NotaRecordatorio(String codigo, String titulo, String contenido, LocalDateTime fechaCreacion, LocalDateTime fechaRecordatorio) {
-        super(codigo, titulo, fechaCreacion);
-        this.contenido = contenido;
-        this.fechaRecordatorio = fechaRecordatorio;
-    }
-
     public NotaRecordatorio(String codigo, String titulo, String contenido, LocalDateTime fechaCreacion, LocalDateTime fechaRecordatorio, List<Etiqueta> etiquetas) {
         super(codigo, titulo, fechaCreacion, etiquetas);
         this.contenido = contenido;

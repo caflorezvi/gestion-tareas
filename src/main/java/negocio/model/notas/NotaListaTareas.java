@@ -10,11 +10,6 @@ public class NotaListaTareas extends Nota{
 
     private List<Tarea> tareas;
 
-    public NotaListaTareas(String codigo, String titulo, LocalDateTime fechaCreacion, List<Tarea> tareas) {
-        super(codigo, titulo, fechaCreacion);
-        this.tareas = tareas;
-    }
-
     @Builder
     public NotaListaTareas(String codigo, String titulo, LocalDateTime fechaCreacion, List<Tarea> tareas, List<Etiqueta> etiquetas) {
         super(codigo, titulo, fechaCreacion, etiquetas);
