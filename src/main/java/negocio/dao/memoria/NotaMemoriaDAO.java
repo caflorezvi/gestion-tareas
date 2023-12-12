@@ -1,15 +1,16 @@
-package negocio.dao;
+package negocio.dao.memoria;
 
+import negocio.dao.ICRUD;
 import negocio.model.notas.Nota;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class NotaDAO implements ICRUD<Nota, String> {
+public class NotaMemoriaDAO implements ICRUD<Nota, String> {
 
     private final List<Nota> notas;
 
-    public NotaDAO() {
+    public NotaMemoriaDAO() {
         this.notas = new ArrayList<>();
     }
 
@@ -53,14 +54,6 @@ public class NotaDAO implements ICRUD<Nota, String> {
             return Optional.empty();
 
         return Optional.of(nota);
-    }
-
-    public List<Nota> listarNotasPorTitulo(String busqueda) {
-        return this.listar().stream().filter( nota -> nota.getTitulo().toLowerCase().contains(busqueda.toLowerCase()) ).toList();
-    }
-
-    public List<Nota> listarNotasPorEtiqueta(String etiqueta) {
-        return this.listar().stream().filter( nota -> nota.getEtiquetas().stream().anyMatch(e -> e.getNombre().toLowerCase().contains(etiqueta.toLowerCase())) ).toList();
     }
 
 }

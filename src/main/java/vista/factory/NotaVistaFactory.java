@@ -4,7 +4,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import negocio.model.notas.Nota;
 import vista.controller.CreacionController;
@@ -26,7 +29,7 @@ public abstract class NotaVistaFactory extends GridPane implements INotaVistaFac
         setOnMouseClicked(mouseEvent -> {
 
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/crear.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/crear.fxml"));
                 Parent parent = loader.load();
 
                 CreacionController creacionController = loader.getController();
@@ -48,6 +51,8 @@ public abstract class NotaVistaFactory extends GridPane implements INotaVistaFac
     }
 
     public void agregarBase(){
+
+        setBackground( new Background( new BackgroundFill(Color.rgb(255,255,153), null, null)));
         add( new Label(getNota().getTitulo()), 0, 0);
         add( new Label(getNota().getFechaCreacion().toString()), 0, 1);
         add( new Label(getNota().getEtiquetas().toString()), 0, 2);

@@ -3,6 +3,7 @@ package vista.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import negocio.controller.NotasController;
 import negocio.model.notas.Nota;
@@ -20,7 +21,7 @@ public class CreacionController implements Initializable {
     private TextField titulo;
 
     @FXML
-    private TextField contenido;
+    private TextArea contenido;
     private Observador observador;
     private Nota nota;
     private boolean esEdicion;

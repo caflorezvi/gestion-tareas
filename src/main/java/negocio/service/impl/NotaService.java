@@ -1,6 +1,7 @@
 package negocio.service.impl;
 
-import negocio.dao.NotaDAO;
+import negocio.dao.factory.PersistenciaNotasFactory;
+import negocio.dao.memoria.NotaMemoriaDAO;
 import negocio.factory.INotaFactory;
 import negocio.factory.NotaBasicaFactory;
 import negocio.factory.NotaListaTareasFactory;
@@ -17,10 +18,10 @@ import java.util.Optional;
 
 public class NotaService implements INotaService {
 
-    private final NotaDAO notaDAO;
+    private final PersistenciaNotasFactory notaDAO;
 
     public NotaService() {
-        this.notaDAO = new NotaDAO();
+        this.notaDAO = new PersistenciaNotasFactory(new NotaMemoriaDAO());
     }
 
     @Override
@@ -97,11 +98,11 @@ public class NotaService implements INotaService {
 
     @Override
     public List<Nota> listarNotasPorEtiqueta(String etiqueta) {
-        return this.notaDAO.listarNotasPorEtiqueta(etiqueta);
+        return this.listarNotas().stream().filter( nota -> nota.getEtiquetas().stream().anyMatch(e -> e.getNombre().toLowerCase().contains(etiqueta.toLowerCase())) ).toList();
     }
 
     @Override
     public List<Nota> listarNotasPorTituloOContenido(String busqueda) {
-        return this.notaDAO.listarNotasPorTitulo(busqueda);
+        return this.listarNotas().stream().filter( nota -> nota.getTitulo().toLowerCase().contains(busqueda.toLowerCase()) ).toList();
     }
 }

@@ -50,7 +50,7 @@ public class InicioController implements Initializable, Observador {
 
     public void crearNuevaNota() throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/crear.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/layouts/crear.fxml"));
         Parent parent = loader.load();
 
         CreacionController creacionController = loader.getController();

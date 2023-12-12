@@ -1,6 +1,7 @@
 package negocio.service.impl;
 
-import negocio.dao.EtiquetaDAO;
+import negocio.dao.factory.PersistenciaEtiquetasFactory;
+import negocio.dao.memoria.EtiquetaMemoriaDAO;
 import negocio.model.Etiqueta;
 import negocio.service.interfaces.IEtiquetaService;
 
@@ -9,10 +10,10 @@ import java.util.Optional;
 
 public class EtiquetaService implements IEtiquetaService {
 
-    private final EtiquetaDAO etiquetaDAO;
+    private final PersistenciaEtiquetasFactory etiquetaDAO;
 
     public EtiquetaService() {
-        this.etiquetaDAO = new EtiquetaDAO();
+        this.etiquetaDAO = new PersistenciaEtiquetasFactory( new EtiquetaMemoriaDAO() );
     }
 
     @Override

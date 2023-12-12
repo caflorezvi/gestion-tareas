@@ -11,7 +11,7 @@ public class AppVista extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(AppVista.class.getResource("/inicio.fxml"));
+        FXMLLoader loader = new FXMLLoader(AppVista.class.getResource("/layouts/inicio.fxml"));
         Parent parent = loader.load();
 
         Scene scene = new Scene(parent);
