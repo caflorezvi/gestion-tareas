@@ -1,12 +1,13 @@
 package negocio.dao.memoria;
 
 import negocio.dao.ICRUD;
+import negocio.dao.notas.NotasRepository;
 import negocio.model.notas.Nota;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class NotaMemoriaDAO implements ICRUD<Nota, String> {
+public class NotaMemoriaDAO implements NotasRepository  {
 
     private final List<Nota> notas;
 

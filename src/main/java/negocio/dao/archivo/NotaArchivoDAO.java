@@ -1,6 +1,6 @@
 package negocio.dao.archivo;
 
-import negocio.dao.ICRUD;
+import negocio.dao.notas.NotasRepository;
 import negocio.model.notas.Nota;
 
 import java.io.*;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class NotaArchivoDAO implements ICRUD<Nota, String> {
+public class NotaArchivoDAO implements NotasRepository {
 
     private static final String RUTA = "src/main/resources/datos/notas.ser";
 

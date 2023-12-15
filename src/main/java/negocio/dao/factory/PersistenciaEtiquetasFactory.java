@@ -1,39 +1,35 @@
 package negocio.dao.factory;
 
 import negocio.dao.ICRUD;
+import negocio.dao.notas.EtiquetasRepository;
 import negocio.model.Etiqueta;
 import java.util.List;
 import java.util.Optional;
 
-public class PersistenciaEtiquetasFactory implements ICRUD<Etiqueta, String> {
+public class PersistenciaEtiquetasFactory {
 
-    private final ICRUD<Etiqueta, String> etiquetaDAO;
+    private final EtiquetasRepository etiquetaDAO;
 
-    public PersistenciaEtiquetasFactory(ICRUD<Etiqueta, String> etiquetaDAO) {
+    public PersistenciaEtiquetasFactory(EtiquetasRepository etiquetaDAO) {
         this.etiquetaDAO = etiquetaDAO;
     }
 
-    @Override
     public String crear(Etiqueta etiqueta) {
         return etiquetaDAO.crear(etiqueta);
     }
 
-    @Override
     public List<Etiqueta> listar() {
         return etiquetaDAO.listar();
     }
 
-    @Override
     public String actualizar(Etiqueta etiqueta) throws Exception {
         return etiquetaDAO.actualizar(etiqueta);
     }
 
-    @Override
     public void eliminar(String id) throws Exception {
         etiquetaDAO.eliminar(id);
     }
 
-    @Override
     public Optional<Etiqueta> buscar(String id) {
         return etiquetaDAO.buscar(id);
     }

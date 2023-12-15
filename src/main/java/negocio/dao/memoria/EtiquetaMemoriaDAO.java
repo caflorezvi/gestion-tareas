@@ -1,13 +1,14 @@
 package negocio.dao.memoria;
 
 import negocio.dao.ICRUD;
+import negocio.dao.notas.EtiquetasRepository;
 import negocio.model.Etiqueta;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class EtiquetaMemoriaDAO implements ICRUD<Etiqueta, String> {
+public class EtiquetaMemoriaDAO implements EtiquetasRepository {
 
     private final List<Etiqueta> etiquetas;
 

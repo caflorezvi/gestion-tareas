@@ -1,11 +1,11 @@
 package negocio.dao.archivo;
 
-import negocio.dao.ICRUD;
+import negocio.dao.notas.EtiquetasRepository;
 import negocio.model.Etiqueta;
 import java.util.List;
 import java.util.Optional;
 
-public class EtiquetaArchivoDAO implements ICRUD<Etiqueta, String> {
+public class EtiquetaArchivoDAO implements EtiquetasRepository {
 
     @Override
     public String crear(Etiqueta etiqueta) {
