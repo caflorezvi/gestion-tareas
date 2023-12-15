@@ -1,6 +1,6 @@
 package negocio.dao.factory;
 
-import negocio.dao.notas.NotasRepository;
+import negocio.dao.repositorios.NotasRepository;
 import negocio.model.notas.Nota;
 import java.util.List;
 import java.util.Optional;

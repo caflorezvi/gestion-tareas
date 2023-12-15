@@ -1,7 +1,6 @@
 package negocio.dao.memoria;
 
-import negocio.dao.ICRUD;
-import negocio.dao.notas.EtiquetasRepository;
+import negocio.dao.repositorios.EtiquetasRepository;
 import negocio.model.Etiqueta;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package negocio.dao.notas;
+package negocio.dao.repositorios;
 
 import negocio.dao.ICRUD;
 import negocio.model.Etiqueta;

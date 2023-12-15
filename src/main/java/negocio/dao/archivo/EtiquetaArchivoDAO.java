@@ -1,6 +1,6 @@
 package negocio.dao.archivo;
 
-import negocio.dao.notas.EtiquetasRepository;
+import negocio.dao.repositorios.EtiquetasRepository;
 import negocio.model.Etiqueta;
 import java.util.List;
 import java.util.Optional;
